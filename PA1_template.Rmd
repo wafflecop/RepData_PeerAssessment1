@@ -63,7 +63,7 @@ Mean steps per day = `r sprintf(' %.2f', meanStepsPerDay)` while the median = `r
 ### What is the average daily activity pattern?
 
 ``` {r Question2,dev='png',fig.path='figure/'}
-  q2 = aggregate(activity$steps ~ activity$interval,  FUN = sum)
+  q2 = aggregate(activity$steps ~ activity$interval,  FUN = mean)
   names(q2) = c('interval', 'steps')
   g = ggplot(q2, aes(interval, steps))
   g + geom_line(colour="darkgreen") + labs(y = "Steps per interval", x = "Interval")

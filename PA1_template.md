@@ -66,7 +66,7 @@ Mean steps per day =  10766.19 while the median = 10765
 
 
 ```r
-  q2 = aggregate(activity$steps ~ activity$interval,  FUN = sum)
+  q2 = aggregate(activity$steps ~ activity$interval,  FUN = mean)
   names(q2) = c('interval', 'steps')
   g = ggplot(q2, aes(interval, steps))
   g + geom_line(colour="darkgreen") + labs(y = "Steps per interval", x = "Interval")
